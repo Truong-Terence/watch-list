@@ -1,8 +1,8 @@
 <h1>My lists</h1>
 
 <% @lists.each do |list| %>
-  <li>
+  <li class="card">
     <%= link_to list.name, list_path(list) %>
-    <%= link_to "Del", list_path(list), method: :delete %>
+    <%= link_to "Del", lists_path, method: :delete %>
   </li>
 <% end %>
