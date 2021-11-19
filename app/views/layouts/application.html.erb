@@ -12,6 +12,10 @@
   </head>
 
   <body>
+    <nav class="navbar">
+      <%= link_to "Home", root_path %>
+      <%= link_to "New list", new_list_path %>
+    </nav>
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,10 @@
+<%= @list.name %>
+<%= link_to "Add a movie !", new_list_bookmark_path(@list) %>
+<% @bookmarks.each do |bookmark| %>
+  <%= bookmark.comment %> <br>
+  <%= bookmark.movie.title %> <br>
+  <img src="https://image.tmdb.org/t/p/w500<%= bookmark.movie.poster_url %>" alt=""> <br>
+  <%= bookmark.movie.overview %> <br>
+  <%= bookmark.movie.rating %>
+  <%= link_to "remove this movie", bookmark_path(bookmark), method: :delete %>
+<% end %>

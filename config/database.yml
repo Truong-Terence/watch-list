@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: watch_list_production
-  username: watch_list
-  password: <%= ENV['WATCH_LIST_DATABASE_PASSWORD'] %>
+  url: <%= ENV['POSTGRESQL_ADDON_URI'] %>

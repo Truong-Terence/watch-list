@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "app_id": "app_55f354ff-3fce-44d7-a13e-a40fa0bfe61d",
+      "org_id": "user_c063a849-088d-429f-a124-e3c90cdbc9bb",
+      "deploy_url": "https://push-n2-par-clevercloud-customers.services.clever-cloud.com/app_55f354ff-3fce-44d7-a13e-a40fa0bfe61d.git",
+      "name": "movie-list",
+      "alias": "movie-list"
+    }
+  ]
+}
