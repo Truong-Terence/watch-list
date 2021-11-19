@@ -1,4 +1,9 @@
 <%= @list.name %>
+<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+<%# @list.photos.each do |photo| %>
+  <%# cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<%# end %>
+
 <%= link_to "Add a movie !", new_list_bookmark_path(@list) %>
 <% @bookmarks.each do |bookmark| %>
   <%= bookmark.comment %> <br>

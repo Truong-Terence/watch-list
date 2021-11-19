@@ -1,8 +1,10 @@
-<h1>My lists</h1>
+<div class="my-banner">
+  <h1>My lists</h1>
+</div>
 
 <% @lists.each do |list| %>
-  <li class="card">
+  <li class='my-card'>
     <%= link_to list.name, list_path(list) %>
-    <%= link_to "Del", lists_path, method: :delete %>
+    <%= link_to "Del", list_path(list), method: :delete %>
   </li>
 <% end %>
