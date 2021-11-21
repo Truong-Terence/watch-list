@@ -6,6 +6,7 @@
   background-position-y: -10vh;
   padding-left: 80px;
   padding-top: 30vh;
+  margin-bottom: 10px;
   color: rgb(240, 230, 230);
   h1 {
     font-size: 70px !important;
@@ -13,5 +14,24 @@
     font-weight: 600 !important;
   }}
 
-  .my-card {
+.my-card-container {
+  text-align: center;
+}
+
+.my-card {
+  background-size: cover;
+  margin: 5px;
+  padding: 15px;
+  height: 200px;
+  border: solid whitesmoke 3px;
+  &:hover {
+    opacity: .8;
   }
+  h2 {
+    font-family: 'Raleway Dots', cursive !important;
+    font-weight: 900;
+    a {
+      text-shadow: rgb(177, 15, 15) 2px 5px;
+    }
+  }
+}

@@ -1,15 +1,38 @@
-<%= @list.name %>
-<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+<div class="container my-card-container">
+  <div class="my-card-show" style= "background-image: url('<%= cl_image_path @list.photo.key %>')">
+    <h2><%= @list.name %></h2>
+    <%= link_to "Add a movie !", new_list_bookmark_path(@list) %>
+    <%= link_to "Del", list_path(@list), method: :delete %>
+  </div>
+</div>
+
 <%# @list.photos.each do |photo| %>
   <%# cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
 <%# end %>
 
-<%= link_to "Add a movie !", new_list_bookmark_path(@list) %>
-<% @bookmarks.each do |bookmark| %>
-  <%= bookmark.comment %> <br>
-  <%= bookmark.movie.title %> <br>
-  <img src="https://image.tmdb.org/t/p/w500<%= bookmark.movie.poster_url %>" alt=""> <br>
-  <%= bookmark.movie.overview %> <br>
-  <%= bookmark.movie.rating %>
-  <%= link_to "remove this movie", bookmark_path(bookmark), method: :delete %>
-<% end %>
+<div class="container my-card-container">
+  <button class="btn btn-info my-3 sticky-top" type="button" data-toggle="collapse" data-target=".collapse" aria-expanded="false" aria-controls="collapse">More info about movies</button>
+  <div class="row">
+    <% @bookmarks.each do |bookmark| %>
+      <div class="col-3 m-2">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="https://image.tmdb.org/t/p/w500<%= bookmark.movie.poster_url %>">
+          <div class="collapse">
+            <div class="card-body">
+              <h5 class="card-title"><%= bookmark.movie.title %></h5>
+              <p class="card-text overflow-auto" style="height: 10rem";><%= bookmark.movie.overview %></p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><%= bookmark.movie.rating %></li>
+              <li class="list-group-item"><%= bookmark.comment %></li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link"><%= link_to "remove this movie", bookmark_path(bookmark), method: :delete %></a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

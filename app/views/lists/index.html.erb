@@ -2,9 +2,14 @@
   <h1>My lists</h1>
 </div>
 
-<% @lists.each do |list| %>
-  <li class='my-card'>
-    <%= link_to list.name, list_path(list) %>
-    <%= link_to "Del", list_path(list), method: :delete %>
-  </li>
-<% end %>
+<div class="container my-card-container">
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="col-4">
+        <div class='my-card' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key %>')">
+          <h2><%= link_to list.name, list_path(list), class: "stretched-link"%></h2>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

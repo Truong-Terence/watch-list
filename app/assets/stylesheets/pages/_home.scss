@@ -1,1 +1,17 @@
 // Specific CSS for your home-page
+label, input {
+  color: whitesmoke;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: antiquewhite;
+  &:hover {
+    text-decoration: none;
+    color: whitesmoke;
+  }
+}
